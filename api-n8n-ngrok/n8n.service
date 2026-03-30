@@ -1,0 +1,21 @@
+[Unit]
+Description=n8n workflow automation service
+After=docker.service
+Requires=docker.service
+
+[Service]
+User=mary
+Group=docker
+Restart=always
+RestartSec=5
+
+ExecStartPre=-/usr/bin/docker stop n8n
+ExecStartPre=-/usr/bin/docker rm n8n
+ExecStart=/usr/bin/docker run --name n8n \
+  -p 5678:5678 \
+  -v /home/mary/actividadServidores/n8n_data:/home/node/.n8n \
+  docker.n8n.io/n8nio/n8n
+ExecStop=/usr/bin/docker stop n8n
+
+[Install]
+WantedBy=multi-user.target

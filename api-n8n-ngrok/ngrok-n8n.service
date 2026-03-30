@@ -1,0 +1,15 @@
+[Unit]
+Description=ngrok tunnel for n8n
+After=network-online.target n8n.service
+Wants=network-online.target
+
+[Service]
+User=mary
+Group=mary
+Environment=NGROK_CONFIG=/home/mary/.config/ngrok/ngrok.yml
+ExecStart=/usr/local/bin/ngrok http 5678
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
