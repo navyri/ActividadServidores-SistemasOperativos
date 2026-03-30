@@ -28,22 +28,22 @@ Para exponer la API en internet se utiliza **ngrok**, creando un túnel HTTP hac
 ## Cómo encender y probar el PRIMER EJERCICIO (API + ngrok)
 
 ```bash
-‧ 𖹭.ᐟ 1. Ir al directorio del proyecto
+# ‧ 𖹭.ᐟ 1. Ir al directorio del proyecto
 cd /home/mary/actividadServidores
 
-‧ 𖹭.ᐟ 2. Arrancar la API
+# ‧ 𖹭.ᐟ 2. Arrancar la API
 sudo systemctl restart actividadServidores_srv.service
 sudo systemctl status actividadServidores_srv.service   # comprobar active (running)
 
-‧ 𖹭.ᐟ 3. Probar en local
-Navegador: http://localhost:8000/items/
-Documentación: http://localhost:8000/docs
+# ‧ 𖹭.ᐟ 3. Probar en local
+# ‧ Navegador: http://localhost:8000/items/
+# ‧ Documentación: http://localhost:8000/docs
 
-‧ 𖹭.ᐟ 4. Exponer la API con ngrok (solo mientras se muestra)
+# ‧ 𖹭.ᐟ 4. Exponer la API con ngrok (solo mientras se muestra)
 ngrok http 8000
-Misma ruta usando la URL pública de ngrok: https://untransferring-unprecariously-mathias.ngrok-free.dev/items/
+# ‧ Misma ruta usando la URL pública de ngrok: https://untransferring-unprecariously-mathias.ngrok-free.dev/items/
 
-‧ 𖹭.ᐟ 5. (Opcional) Apagar la API al terminar
+# ‧ 𖹭.ᐟ 5. (Opcional) Apagar la API al terminar
 sudo systemctl stop actividadServidores_srv.service
 ```
 
@@ -70,25 +70,25 @@ El comportamiento de estos servicios se ilustra en la actividad con capturas de:
 ## Cómo encender y probar el SEGUNDO EJERCICIO (n8n + ngrok)
 
 ```bash
-‧ 𖹭.ᐟ 1. Encender n8n
+# ‧ 𖹭.ᐟ 1. Encender n8n
 sudo systemctl enable n8n.service        # solo la primera vez
 sudo systemctl start n8n.service
 sudo systemctl status n8n.service        # comprobar active (running)
 
-‧ 𖹭.ᐟ 2. Encender ngrok para n8n
+# ‧ 𖹭.ᐟ 2. Encender ngrok para n8n
 sudo systemctl enable ngrok-n8n.service  # solo la primera vez
 sudo systemctl start ngrok-n8n.service
 sudo systemctl status ngrok-n8n.service
 
-‧ 𖹭.ᐟ 3. Ver en los logs que el túnel está activo
+# ‧ 𖹭.ᐟ 3. Ver en los logs que el túnel está activo
 journalctl -u ngrok-n8n.service -n 30 --no-pager
 
-‧ 𖹭.ᐟ 4. Probar en el navegador
-Interfaz n8n:   http://localhost:5678
-Webhook helados: http://localhost:5678/webhook/items-n8n
-Misma ruta usando la URL pública de ngrok: https://untransferring-unprecariously-mathias.ngrok-free.dev/webhook/items-n8n
+# ‧ 𖹭.ᐟ 4. Probar en el navegador
+# ‧ Interfaz n8n:   http://localhost:5678
+# ‧ Webhook helados: http://localhost:5678/webhook/items-n8n
+# ‧ Misma ruta usando la URL pública de ngrok: https://untransferring-unprecariously-mathias.ngrok-free.dev/webhook/items-n8n
 
-‧ 𖹭.ᐟ 5. Apagar servicios al terminar la demostración
+# ‧ 𖹭.ᐟ 5. Apagar servicios al terminar la demostración
 sudo systemctl stop ngrok-n8n.service
 sudo systemctl stop n8n.service
 ```
