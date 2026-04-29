@@ -1,5 +1,5 @@
 <p align='center'> 
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=80354A&text=Actividad%20Servidores&fontColor=FFFFFF&desc=Resumen%20Sistemas%20Operativos%20(2026-1)&fontAlignY=30&descAlignY=54"/> 
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=80354A&text=Actividad%20Servidores&fontColor=FFFFFF&desc=Sistemas%20Operativos%20(2026-1)&fontAlignY=30&descAlignY=54"/> 
 </p>
 
 <p align='center'>
